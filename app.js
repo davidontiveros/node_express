@@ -24,5 +24,5 @@ app.get('/', function (request, response) {
 
 /* port config */
 app.listen(89, function () {
-  console.log('server running ...');
+  console.log('server up and running ...');
 });
