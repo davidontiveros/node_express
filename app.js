@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var http = require('http');
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'views/html')));
@@ -22,7 +23,13 @@ app.get('/', function (request, response) {
 });
 */
 
-/* port config */
-app.listen(89, function () {
-  console.log('server up and running ...');
+/* Port & Server configuration */
+var port = 89;
+app.set('port', port);
+var server = http.createServer(app);
+// listen on provided port
+server.listen(app.get('port'), function() {
+  console.log('server up and running on port: '+port);
 });
+//server.on('error', onError);
+//server.on('listening', onListening);
