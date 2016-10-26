@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../db/db');
+var assert = require('assert');
 
 /* GET users listing.
 router.get('/', function(req, res, next) {
@@ -8,6 +10,22 @@ router.get('/', function(req, res, next) {
  */
 
 router.get('/', function(req, res, next) {
+
+  // note: always use "db.get()" to actually get the db object to query.
+  var query = {};
+  var projection = {'_id': 0};
+  var cursor = db.get().collection('persons').find(query);
+  cursor.project(projection);
+  cursor.toArray( function (err, docs) {
+    assert.equal(err, null);
+    console.log(docs);
+    res.json({
+      users: docs
+    });
+  });
+
+
+  /* this below was hardcoded dummy json to response
   var users = [];
   users.push({
     name: 'David',
@@ -21,6 +39,7 @@ router.get('/', function(req, res, next) {
   res.json({
       users: users
   });
+  */
 });
 
 module.exports = router;
