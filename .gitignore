@@ -1,9 +1,15 @@
-#########
-## IDEA
-#########
+#=======
+# IDEA
+#=======
 .idea
 
-###############
+#==============
 # node_modules
-###############
+#==============
 node_modules
+server/node_modules
+
+#==================
+# bower_components
+#==================
+app/javascripts/vendors

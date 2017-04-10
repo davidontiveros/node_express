@@ -1,0 +1,17 @@
+{
+  "name": "node_angular",
+  "version": "1.0.0",
+  "private": true,
+  "ignore": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "angular": "1.6.4",
+    "angular-route": "1.6.4",
+    "angular-ui-bootstrap": "2.5.0",
+    "jquery": "*",
+    "underscore": "1.8.3",
+    "requirejs": "2.3.3",
+    "bootstrap":  "3.3.7"
+  }
+}
