@@ -3,6 +3,8 @@
  */
 require.config({
 
+    baseUrl : 'javascripts',
+
     // alias libraries paths
     paths: {
         'angular': './vendors/angular/angular',
