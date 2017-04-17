@@ -8,6 +8,7 @@
   "dependencies": {
     "angular": "1.6.4",
     "angular-route": "1.6.4",
+    "angular-mocks": "1.6.4",
     "angular-ui-bootstrap": "2.5.0",
     "jquery": "*",
     "underscore": "1.8.3",

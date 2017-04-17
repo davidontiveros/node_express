@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './',
+    basePath: '',
 
 
     // frameworks to use
@@ -13,16 +13,17 @@ module.exports = function(config) {
     frameworks: ['jasmine', 'requirejs'],
 
 
-    // list of files / patterns to load in the browser
+    // list of files / patterns to load in the browser .. libs/vendors files should be included in the pattern also
+    // common problem: no timestamp found for '*/*.js' files is caused when library paths are not being loaded down here.
     files: [
-      'test/test-main.js',
-      {pattern: '"javascripts/*.js', included: false},
-      {pattern: '"javascripts/*.js"', included: false},
-      {pattern: 'javscripts/*.js', included: false},
+      {pattern: 'javascripts/vendors/**/*.js', included: false},
       {pattern: 'javascripts/*.js', included: false},
-      {pattern: 'test/**/*Spec.js', included: false}
+      {pattern: 'javascripts/controllers/*.js', included: false},
+      {pattern: 'javascripts/services/*.js', included: false},
+      {pattern: 'javascripts/routes/*.js', included: false},
+      {pattern: 'test/**/*Spec.js', included: false},
+      'test/test-main.js'
     ],
-
 
     // list of files to exclude
     exclude: [
@@ -72,4 +73,4 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity
   })
-}
+};
