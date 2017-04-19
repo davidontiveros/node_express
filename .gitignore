@@ -13,3 +13,8 @@ server/node_modules
 # bower_components
 #==================
 app/javascripts/vendors
+
+#=======================
+# grunt generated files
+#=======================
+app/javascripts/prod/
