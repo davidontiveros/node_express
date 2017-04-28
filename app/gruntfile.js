@@ -23,13 +23,23 @@ module.exports = function(grunt) {
                     mainConfigFile: 'javascripts/main.js' // path to the requirejs main file
                 }
             }
+        },
+
+        karma: {
+            options: {
+                configFile: 'karma.conf.js'
+            },
+            unit: {
+                singleRun: true
+            }
         }
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-karma');
 
     // Default task(s)
-    grunt.registerTask('default', ['clean:start','requirejs:build']);
+    grunt.registerTask('default', ['karma','clean:start','requirejs:build']);
 };

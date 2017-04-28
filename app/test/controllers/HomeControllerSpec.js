@@ -17,6 +17,7 @@ define(['app','angular-mocks'], function(app) {
         it('should load the scope', function () {
             dump(scope.testMessage);
             expect(scope).toBeDefined();
+            //expect(scope.message).toBeDefined();
         });
         
     });
